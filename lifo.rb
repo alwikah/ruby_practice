@@ -11,8 +11,8 @@ class List
 
         def remove ()  
         	if(@l == 0)
-            puts "The list is empty."
-           else  
+             puts "The list is empty."
+            else  
              array1= @array[0..@l-2]
              @array= array1 
         	end 
