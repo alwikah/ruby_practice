@@ -7,7 +7,7 @@ class List
         def add(item)
            @array[@l] = item
            @l= @l+1
-           puts @l
+          
         end
 
         def remove ()  
