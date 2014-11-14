@@ -1,38 +1,59 @@
 class List
-    def initialize(size=0)
-    	@array= Array.new(size)
-    	@size=size
+    def initialize()
+    	@array = Array.new()
+    	@l = 0
      end
-        attr_reader:array 
-        attr_accessor:size 
 
         def add(item)
-           @size=@size+1
-           @array[size]= item
+           @array[@l] = item
+           @l= @l+1
+           puts @l
         end
 
         def remove ()  
-        	@array[size]= nil
-            if (size != 0)
-            	@size=@size-1
-            else 
-            	puts " The array is already empty"
-            end
+        	if(@l == 0)
+            puts "The list is empty."
+           else  
+             array1= @array[0..@l-2]
+             @array= array1 
+        	end 
+        end
+
+        def print()
+     	   puts @array
         end
 
 
-     def print()
-     	puts @array
-     end
+     def exit 
+        puts "Continue? ( y/n )"
+        if( gets.chomp == "y")
+        	self.menu()
+        else
+        	abort 
+        end
+    end
 
+
+     def menu
+     	puts "Choose between: add,remove,print"
+        case gets.strip
+        when "add"
+        	self.add(gets.chomp)
+             self.exit()
+        when "remove"
+        	self.remove()
+        	self.exit()
+        when "print"
+        	self.print()
+        	self.exit()
+        end
+     end
+ 
 end
 
-list= List.new()
-list.add("first")
-list.add(1)
-list.add([3,4,6])
-list.print()
-list.remove()
-list.print()
+list = List.new()
+
+list.menu()
 
 
+ 
