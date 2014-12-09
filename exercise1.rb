@@ -1,18 +1,5 @@
-
-
-
 wordlist = File.open("dictionary.txt","r") 
 
-#def Dictionary.load(word_length)
- #   dict = Dictionary.new(word_length)
-    
-  #  IO.foreach("wordlist.txt") do |line|
-   #   line.strip!
-    #  dict.add_word(Word.new(line)) if line.length == word_length
-    #end
-    
-    #return dict
-  #end
 words_hash = Hash.new()
 wordarr= Array.new()
 
@@ -43,23 +30,16 @@ sorted= Array.new()
 #in the resulting array, collect from the hash all the arrays corresponding to the keys, in order
 sorted= key_arr.collect{|key| words_hash[key] }
 
-#myfile = File.open("result.txt",'w') #open another one/
+myfile = File.open("result.txt",'w') #open another one/
 
-#sorted.each do |item| 
-#	item.each do |el|
- #	myfile.write("#{el}\n")
- #end
-#end
+sorted.each do |item| 
+	item.each do |el|
+ 	myfile.write("#{el}\n")
+ end
+end
 
- #myfile.close 
- puts arr5
-    
+myfile.close 
 
-  #def search(w1)
-  #	warr= words_hash.fetch(w1.length)
-  #	return false if !(arr.include?(w1))
-   # return true
-  #end
 
 
  
